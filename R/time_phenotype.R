@@ -1,20 +1,3 @@
-# -------------------------------------------------------------------------
-#'@title  time_phenotype
-#'
-#'@description  Get the TIME phenotypes and TIMEscore
-#'
-#'@details  Use gene expression data to get the corresponding TIME phenotypes and TIMEscore
-#'
-#'@param data The matrix of gene expression data, rows are samples and columns are genes.
-#'
-#'@return a list
-#'
-#'@examples
-#'if(!require("GSVA")) BiocManager::install("GSVA",update = F,ask = F)
-#'if(!require("clusterRepro")) install.packages("clusterRepro",update = F,ask = F)
-#'library(TIME)
-#'data('data')
-#'result=time_phenotype(data2)
 time_phenotype <- function(data=data){
   ssgsea <- t(scale(t((gsva(as.matrix(data2),immune,method = 'ssgsea')))))
   x <- intersect(rownames(ssgsea),rownames(Centroids))
